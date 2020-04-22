@@ -28,12 +28,24 @@ constraint tasks_user_id_foreign foreign key (User_Id) references users (user_id
 constraint tasks_project_id_foreign foreign key (Project_id) references projects (project_id) 
 );
 
+create table reports(
+report_id int primary key auto_increment,
+report varchar (1000),
+complete int,
+development int,
+stoped int,
+Project_Id int,
+User_ID int,
+constraint reports_project_id_foreign foreign key (Project_Id) references projects (project_id), 
+constraint reports_user_id_foreign foreign key (User_ID) references users (user_id)
+);
+
 select *from users;
 select *from projects;
 select *from tasks;
+select *from reports;
 
 describe users;
 describe projects;
 describe tasks;
-
-select name from projects where User_id = '1';
+describe reports;
