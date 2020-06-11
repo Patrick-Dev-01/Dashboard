@@ -1,0 +1,107 @@
+.login-container{
+    width: 100%;
+    background-color: rgb(2, 2, 71);
+    height: 100vh;
+    position: absolute;
+    background-color: rgb(2, 2, 71);
+}
+
+.login{
+    width: 95%;
+    background-color: white;
+    margin: auto;
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.login h2{
+    text-align: center;
+}
+
+.login aside{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.login aside img{
+    width: 60%;
+    height: 70%;
+    margin-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.login-container section{
+    background-color: rgb(75, 104, 75);
+}
+
+section img{
+    width: 80px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 20px;
+}
+
+section h1{
+    text-align: center;
+    color: white;
+    margin: 15px;
+}
+
+.login-section{
+    width: 60%;
+    padding: 10px;
+    display: flex;
+    align-content: center;
+}
+
+label{
+    position: relative;
+}
+
+label .input-icon{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+input{
+    width: 350px;
+    height: 35px;
+    margin: 10px;
+    box-sizing: border-box;
+    padding-left: 45px;
+}
+
+button{
+    width: 100px;
+    height: 30px;
+    background-color: green;
+    color: white;
+    border: 1px solid rgb(7, 7, 7);
+    padding: 5px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+button:hover{
+    background-color: rgb(1, 59, 1);
+}
+
+.redirect{
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+    float: right;
+}
+
+.redirect:hover{
+    color: rgb(184, 184, 238);
+}

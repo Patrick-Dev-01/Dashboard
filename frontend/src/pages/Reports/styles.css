@@ -1,0 +1,65 @@
+.reports-container{
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+    float: right;
+    background-color: rgb(23, 64, 70);
+    overflow: auto;
+}
+
+.reports-container article{
+    width: 100%;
+    float: right;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.reports-container article select{
+    width: 250px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.reports-container section{
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+}
+
+.reports-container section span{
+    color: white;
+    margin-left: 10px;
+}
+
+.report{
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 95%;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: rgb(0, 16, 19);
+}
+
+hr{
+    margin-top: 5px;
+}
+
+.report p {
+    text-indent: 10px;
+    margin-top: 20px;
+    text-align: justify;
+    color: white;
+}
+
+.report strong{
+    margin-top: 10px;
+    color: white;
+}

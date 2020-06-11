@@ -5,30 +5,28 @@ module.exports = {
         
         const { project_id } = req.params;
         const user_id = req.headers.authorization;
-        
-        async function grafico(status, project, user){
-            // query que vai retornar valores para o frontend 
-             const grafic = await connection('tasks').count()
+    
+        // query que vai retornar valores para o frontend 
+        async function progress(status, project_id, user_id,){
+            const grafic = await connection('tasks').count(`status as ${status.charAt(0)}`)
             .where('status', status)
-            .andWhere('Project_id', project)
-            .andWhere('User_Id', user)
+            .andWhere('Project_Id', project_id)
+            .andWhere('User_Id', user_id)
             .first();
 
             return grafic;
         }
 
-        const parado = await grafico('parado', project_id, user_id);
-        const desenvolvimento = await grafico('desenvolvimento', project_id, user_id);
-        const concluido = await grafico('concluido', project_id, user_id);
+        const concluido = await progress('concluido', project_id, user_id);
+        const desenvolvimento = await progress('desenvolvimento', project_id, user_id);
+        const parado = await progress('parado', project_id, user_id);
 
-        /* objeto que armazena os valores do COUNT do status de um projeto para renderizar um grafico para o usuario
-        posteriormente no frontend sobre o progresso desse projeto */
-        const projectProgress = {
-            parado: parado,
+        projectStatus = {
+            concluido: concluido,
             desenvolvimento: desenvolvimento,
-            concluido: concluido
+            parado: parado
         }
 
-        return res.status(200).json(projectProgress);
+        return res.status(200).json(projectStatus);
     }
 }

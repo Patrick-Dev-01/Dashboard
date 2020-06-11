@@ -2,13 +2,32 @@ const connection = require('../database/connection');
 const bcrypt = require('bcrypt');
 
 module.exports = {
+
+    // pegar informações do usuário
+    async index(req, res){
+        const user_id = req.headers.authorization;
+
+        const user = await connection('users').select('*')
+        .where('user_id', user_id);
+
+        res.status(200).json(user);
+    },
+
     // login
     async create(req, res){
         const { email, password } = req.body;
+
+        if(email == ''){
+            return res.status(401).json({error: "E-mail is Empty"})
+        }
+
+        if(password == ''){
+            return res.status(401).json({error: "Password is empty"});
+        }
     
         const user = await connection('users')
         .where('email', email)
-        .select('password')
+        .select('password', 'user_id', 'name', 'lastname')
         .first();
 
         // se o usuario não existir 
@@ -26,7 +45,7 @@ module.exports = {
                 return res.status(401).json({Error: "Incorret Password"});
             }
 
-            return res.status(200).json({Success: "Authenticate Successful"});
+            return res.status(200).json(user);
         });
-    }
+    },
 }

@@ -25,8 +25,6 @@ module.exports = {
     },
 
     async index(req, res){
-        // variavel page para fazer um mini sistema de paginação para não carregar tudo de uma vez
-        const { page = 1 } = req.query;
         const { project_id } = req.params;
         const user_id = req.headers.authorization;
 
@@ -35,15 +33,14 @@ module.exports = {
         .join('projects', 'projects.project_id', '=', 'reports.Project_Id')
         .where('reports.Project_Id', project_id)
         .andWhere('reports.User_ID', user_id)
-        .limit(3)
-        .offset((page - 1) * 3)
         .select(['projects.name', 
         'reports.report_id', 
         'reports.report',
         'reports.complete',
         'reports.development',
         'reports.stoped',
-        'reports.created_at']);
+        'reports.created_at'])
+        .orderBy('reports.report_id', 'desc');
         
         if(reports.length <= 0){
             return res.status(200).json({warning: 'You have not reports on this project'});

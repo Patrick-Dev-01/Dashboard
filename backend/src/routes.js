@@ -12,11 +12,11 @@ const reportController = require('./Controller/ReportController');
 const routes = express.Router();
 
 // rotas de retorno
-routes.get('/', userController.index);
 routes.get('/project', projectController.index)
 routes.get('/task/:project_id', taskController.index);
 routes.get('/indicators/:project_id', graphicController.index);
 routes.get('/report/:project_id', reportController.index);
+routes.get('/user', sessionController.index);
 
 // rotas de envio
 routes.post('/register', userController.create);
@@ -26,11 +26,11 @@ routes.post('/task/:project_id', taskController.create);
 routes.post('/report/:project_id', reportController.create);
 
 // rotas de update
-routes.put('/task/:task_id/:project_id', taskController.update)
+routes.put('/task/:task_id/:project_id', taskController.update);
 routes.put('/user', userController.update);
 
 // rotas de deleção
 routes.delete('/project/:project_id', projectController.delete)
-routes.delete('/task/:task_id/:project:id', taskController.delete);
+routes.delete('/task/:task_id/:project_id', taskController.delete);
 
 module.exports = routes;

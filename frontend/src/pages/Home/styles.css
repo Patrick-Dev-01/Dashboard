@@ -1,0 +1,162 @@
+.home-container{
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+    float: right;
+    background-color: rgb(23, 64, 70);
+    overflow: auto;
+}
+
+.home-container article{
+    width: 100%;
+    float: right;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    justify-self: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.home-container article p{
+    color: black;
+    font-size: 12pt;
+}
+
+.home-container article select{
+    width: 250px;
+    height: 30px;
+}
+
+.home-container article form{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.home-container article form input{
+    padding-left: 5px;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 300px;
+    height: 30px;
+}
+
+.home-container article form button{
+    margin: 0;
+    width: 80px;
+    height: 30px;
+}
+
+.home-container section{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: rgb(0, 16, 19);
+    margin-bottom: 25px;
+}
+
+.task{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 5px;
+}
+
+.delete-icon{
+    position: relative;
+    float: right;
+    color: red;
+    margin-right: 10px;
+}
+
+.delete-icon:hover{
+    color: gray;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.task-title{
+    width: 50%;
+    height: 10vh;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(2, 2, 2)
+}
+
+.task-status{
+    width: 20%;
+    height: 10vh;
+    border: 1px solid rgb(0, 0, 0);
+    position: relative;
+}
+
+.task-title p, .task-status p{
+    font-size: 12pt;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.task-status p{
+    color: white;
+}
+
+ul{
+    display: none;
+}
+
+.task-status ul li{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 15px;
+}
+
+.task-status:hover ul{  
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(201, 201, 201);
+    padding: 5px;
+    z-index: 1;
+    position: absolute;
+}
+
+.task-status:hover ul li:hover{
+    background-color: rgb(253, 253, 253);
+    transition: 1s;
+    cursor: pointer;
+}
+
+.task-status select{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 15px;
+}
+
+.task-status select option{
+    color: black;
+}
+
+.task-status-concluido{
+    background-color: green;
+}
+
+.task-status-desenvolvimento{
+    background-color: rgb(73, 73, 4);
+}
+
+.task-status-parado{
+    background-color: rgb(141, 8, 8);
+}
+
+

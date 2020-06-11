@@ -1,0 +1,81 @@
+.profile{
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.profile-icon{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.profile p {
+    margin-top: 5px;
+    font-size: 16pt;
+}
+
+.menu-container aside{
+    background-color: rgb(9, 9, 94);
+    height: 100vh;
+    width: 20%;
+    position: absolute;
+}
+
+.menu-container aside ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-container aside ul li{
+   padding: 15px;
+}
+
+.menu-container aside ul li:hover{
+    background-color: rgb(132, 112, 248);
+    transition: 1s;
+    cursor: pointer;
+}
+
+.pages-link{
+    font-size: 14pt;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+
+span{
+    float: right;
+    margin-top: 10px;
+}
+
+#span-home{
+    margin-right: 50px;
+}
+
+#span-indicators{
+    margin-right: 25px;
+}
+
+#span-reports{
+    margin-right: 30px;
+}
+
+#span-profile{
+    margin-right: 50px;
+}
+
+#span-logout{
+    margin-right: 55px;
+}
+
+
+
+
+
+

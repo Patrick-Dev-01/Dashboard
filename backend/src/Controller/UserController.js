@@ -40,18 +40,16 @@ module.exports = {
         });
     },
 
-    async index(req, res){
-        const users = await connection('users').select('*');
-
-        return res.status(200).json(users);
-    },
-
     async update(req, res){
-        const { newPassword } = req.body;
+        const { newPassword, newPasswordMatch } = req.body;
         const user_id = req.headers.authorization;
 
         if(newPassword == ''){
             return res.status(400).json({error: "Password can not be empty!"})
+        }
+
+        if(newPassword !== newPasswordMatch){
+            return res.status(400).json({error: "The Passwords doesn't match"});
         }
 
         bcrypt.hash(newPassword, 10, async(err, hash) => {

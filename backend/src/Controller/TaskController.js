@@ -77,29 +77,20 @@ module.exports = {
 
     async delete(req, res){
         const { task_id, project_id } = req.params;
-        const user_id = req.headers.authorization;
 
         // verificar se a tarefa
         const task = await connection('tasks')
         .where('task_id', task_id)
         .andWhere('Project_id', project_id)
-        .andWhere('User_Id'. user_id);
 
         // se por ventura ele não achar a tarefa
         if(!task.length > 0){
             return res.status(404).json({error: "Task not found"});
         }
 
-        // impedir que um usuario não autorizado delete a tarefa
-        if(task.User_Id != user_id){
-            return res.status(403).json({error: "Operation not permited" });
-        }
-
-        await connection('tasks')
+        await connection('tasks').delete()
         .where('task_id', task_id)
-        .andWhere('Project_id', project_id)
-        .andWhere('User_Id', user_id);
 
-        return res.status(204)
+        return res.status(204);
     }
 }
